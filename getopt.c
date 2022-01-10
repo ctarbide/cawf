@@ -10,30 +10,26 @@ directly from AT&T.  The people there assure me that it is indeed
 in the public domain.
 */
 
+#include <stdio.h>
 
-/*LINTLIBRARY*/
-
-#if	defined(UNIX)
-# if	!defined(_NEXT_SOURCE)
-extern int strlen();
-# endif	/* !defined(_NEXT_SOURCE) */
-extern int strcmp();
-extern char *strchr();
-extern int write();
-#else	/* !defined(UNIX) */
-#include <io.h>
+#ifdef STRINGH
 #include <string.h>
-#endif	/* defined(UNIX) */
+#endif
 
+#ifndef NULL
 #define NULL	0
+#endif
+
+#ifndef EOF
 #define EOF	(-1)
+#endif
+
 #define ERR(s, c)	if(opterr){\
 	char errbuf[2];\
 	errbuf[0] = c; errbuf[1] = '\n';\
 	(void) write(2, argv[0], (unsigned)strlen(argv[0]));\
 	(void) write(2, s, (unsigned)strlen(s));\
 	(void) write(2, errbuf, 2);}
-
 
 int	opterr = 1;
 int	optind = 1;
@@ -53,7 +49,7 @@ char	**argv, *opts;
 		if(optind >= argc ||
 		   argv[optind][0] != '-' || argv[optind][1] == '\0')
 			return(EOF);
-		else if(strcmp(argv[optind], "--") == NULL) {
+		else if(strcmp(argv[optind], "--") == 0) {
 			optind++;
 			return(EOF);
 		}

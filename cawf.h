@@ -29,6 +29,9 @@
  */
 
 #include <stdio.h>
+#ifdef STRINGH
+#include <string.h>
+#endif
 #ifdef	UNIX
 #include <sys/types.h>
 #else

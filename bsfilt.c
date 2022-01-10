@@ -30,6 +30,10 @@
 
 #include <stdio.h>
 
+#if	defined(STRINGH)
+#include <string.h>
+#endif
+
 #if	defined(STDLIB)
 #include <stdlib.h>
 #endif	/* defined(STDLIB) */

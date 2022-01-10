@@ -367,6 +367,8 @@ tune it to the local Unix environment:
 			<strings.h>, as is sometimes the case,
 			define only UNIX.
 
+	STRINGH         Include <string.h> unconditionally.
+
 I have built and tested cawf in the UNIX context under AIX 3.2 (see
 the note above on __STR__), BSD4.3-Tahoe, Sequent DYNIX, ETAV (SYSV
 3.0), NeXTStep 3.0, SunOS 4.1.1 and Ultrix 2.2.  If you build under

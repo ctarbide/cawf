@@ -23,6 +23,9 @@
  * regular-expression syntax might require a total rethink.
  */
 #include <stdio.h>
+#ifdef STRINGH
+#include <string.h>
+#endif
 #ifdef	UNIX
 # ifdef	USG
 #include <string.h>
